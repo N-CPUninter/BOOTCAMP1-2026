@@ -36,9 +36,9 @@
 
 # 👥 Professores
 
-| [<img src="https://avatars.githubusercontent.com/u/8054061?v=4" width="75px;"/>](https://github.com/nascimentoRodrigo) | [<img src="https://avatars3.githubusercontent.com/u/60905310?s=460&v=4" width="75px;"/>](https://github.com/guipatriota) | [<img src="https://media.licdn.com/dms/image/v2/C4D03AQEZ0ucDyC-I3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656806969197?e=1777507200&v=beta&t=s6pQJeDpx0wPD0s16Efp6SX4-CDDFdq9ucW1nEtoucY" width="75px;"/>](https://github.com/neusagrando) | [<img src="https://avatars.githubusercontent.com/u/155771429?v=4" width="75px;"/>](https://github.com/leonam-oliveira) | [<img src="https://media.licdn.com/dms/image/v2/D4D03AQFsHo8soDbGOw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689000005086?e=1777507200&v=beta&t=TnbkVxnkGM2ICqeMjFDwuMv-43Y4vJU3tGzEY_vqwYg" width="75px;"/>](https://github.com/eros-kohler-uninter) |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [Prof. Me. Rodrigo da Silva do Nascimento](https://github.com/nascimentoRodrigo) | [Prof. Me. Guilherme Patriota](https://github.com/guipatriota) | [Prof. PhD. Neusa Grando](https://github.com/neusagrando) | [Prof. Me. Leonam Cordeiro de Oliveira](https://github.com/leonam-oliveira) | [Prof. Me. Eros Leon Kohler](https://github.com/eros-kohler-uninter) |
+| [<img src="https://avatars.githubusercontent.com/u/8054061?v=4" width="75px;"/>](https://github.com/nascimentoRodrigo) | [<img src="https://avatars3.githubusercontent.com/u/60905310?s=460&v=4" width="75px;"/>](https://github.com/guipatriota) | [<img src="https://media.licdn.com/dms/image/v2/C4D03AQEZ0ucDyC-I3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656806969197?e=1777507200&v=beta&t=s6pQJeDpx0wPD0s16Efp6SX4-CDDFdq9ucW1nEtoucY" width="75px;"/>](https://github.com/neusagrando) | [<img src="https://avatars.githubusercontent.com/u/5274908?v=4" width="75px;"/>](https://github.com/jadinhu) |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [Prof. Me. Rodrigo da Silva do Nascimento](https://github.com/nascimentoRodrigo) | [Prof. Me. Guilherme Patriota](https://github.com/guipatriota) | [Prof. PhD. Neusa Grando](https://github.com/neusagrando) | [Prof. Me. Jadson Almeida](https://github.com/jadinhu) |
 
 ---
 
@@ -139,6 +139,14 @@ docker/mysql/init/
 ```bash
 docker compose down -v  
 docker compose up --build  
+```
+---
+
+# ▶️ Rodar o Projeto Java 
+
+Execute esse comando no CMD/Terminal:
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 ---
 
