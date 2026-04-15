@@ -42,7 +42,7 @@ public class Usuario {
     @Column(length = 2)
     private String enderecoEstado;
 
-    @OneToMany(mappedBy = "Usuario", cascade = CascadeType.ALL, orphanRemoval = false)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = false)
     private List<UsuarioMedicamento> usuarioMedicamentos = new ArrayList<>();
 
     public Usuario() {

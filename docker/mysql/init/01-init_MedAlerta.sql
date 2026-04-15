@@ -15,7 +15,7 @@ create table Usuario (
     enderecoBairro varchar(50),
     enderecoCEP varchar(10),
     enderecoCidade varchar(50),
-    enderecoEstado char(02),
+    enderecoEstado varchar(02),
     primary key (idUsuario)
 );
 

@@ -15,12 +15,12 @@ public class UsuarioMedicamento {
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idUsuario")
     @JoinColumn(name = "idUsuario")
-    private Usuario Usuario;
+    private Usuario usuario;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idMedicamento")
     @JoinColumn(name = "idMedicamento")
-    private Medicamento Medicamento;
+    private Medicamento medicamento;
 
     @Column(nullable = false)
     private LocalTime horarioUso;
@@ -56,19 +56,19 @@ public class UsuarioMedicamento {
     }
 
     public Usuario getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 
     public Medicamento getMedicamento() {
-        return Medicamento;
+        return medicamento;
     }
 
-    public void setMedicamento(Medicamento Medicamento) {
-        this.Medicamento = Medicamento;
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
     }
 
     public LocalTime getHorarioUso() {
@@ -132,8 +132,8 @@ public class UsuarioMedicamento {
         return "UsuarioMedicamento{" +
                 "idUsuario=" + (id != null ? id.getIdUsuario() : null) +
                 ", idMedicamento=" + (id != null ? id.getIdMedicamento() : null) +
-                ", usuario=" + (Usuario != null ? Usuario.getNome() : null) +
-                ", Medicamento=" + (Medicamento != null ? Medicamento.getNomeComercial() : null) +
+                ", usuario=" + (usuario != null ? usuario.getNome() : null) +
+                ", medicamento=" + (medicamento != null ? medicamento.getNomeComercial() : null) +
                 ", horarioUso=" + horarioUso +
                 ", frequenciaUso='" + frequenciaUso + '\'' +
                 ", dosagem='" + dosagem + '\'' +
