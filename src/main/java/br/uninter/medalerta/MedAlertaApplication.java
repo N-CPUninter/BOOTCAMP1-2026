@@ -12,6 +12,6 @@ public class MedAlertaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MedAlertaApplication.class, args);
-        log.info("MedAlerta iniciado com sucesso!");
+        log.info(">>> MedAlerta iniciado com sucesso! <<<");
     }
 }

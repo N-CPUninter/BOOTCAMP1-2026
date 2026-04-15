@@ -9,6 +9,8 @@ spring:
         format_sql: true
   jackson:
     time-zone: UTC
+  profiles:
+    active: dev
 
 server:
   port: ${SERVER_PORT:8080}
@@ -22,3 +24,4 @@ management:
     web:
       exposure:
         include: health,info
+
