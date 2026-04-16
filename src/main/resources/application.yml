@@ -4,11 +4,16 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         format_sql: true
   jackson:
     time-zone: UTC
+  profiles:
+    active: dev
 
 server:
   port: ${SERVER_PORT:8080}
@@ -22,3 +27,4 @@ management:
     web:
       exposure:
         include: health,info
+
