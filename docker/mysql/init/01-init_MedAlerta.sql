@@ -65,7 +65,8 @@ CREATE TABLE EstoqueMedicamento (
 );
 
 CREATE TABLE Cuidador (
-	idTerceiros INT NOT NULL AUTO_INCREMENT,
+	idCuidador INT NOT NULL AUTO_INCREMENT,
+	idUsuario INT NOT NULL,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -76,8 +77,7 @@ CREATE TABLE Cuidador (
     enderecoCep VARCHAR(10) NOT NULL,
     enderecoCidade VARCHAR(50) NOT NULL,
     enderecoEstado CHAR(2) NOT NULL,
-    idUsuario INT NOT NULL,
-    PRIMARY KEY (idTerceiros),
+    PRIMARY KEY (idCuidador),
     CONSTRAINT fk_Usuario
         FOREIGN KEY (idUsuario)
         REFERENCES Usuario (idUsuario)
