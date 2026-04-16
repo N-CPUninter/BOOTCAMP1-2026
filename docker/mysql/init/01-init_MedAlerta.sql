@@ -4,6 +4,16 @@ ALTER DATABASE medalerta
 
 use medalerta;
 
+create table HorarioMedicamento (
+	idHorarioMedicamento int auto_increment not null,
+	idUsuarioMedicamento int not null,
+	horario time not null,
+	frequenciaValor int not null,
+	frequenciaUnidade enum('horas', 'dias', 'semanas', 'meses') not null,
+	primary key (idHorarioMedicamento),
+	foreign key (idUsuarioMedicamento), references UsuarioMedicamento(idUsuarioMedicamento)
+);
+
 create table Usuario (
 	  idUsuario int auto_increment not null,
 	  nome varchar(100) not null,
