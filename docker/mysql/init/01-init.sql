@@ -39,7 +39,6 @@ VALUES
 (5, 8, '1 comprimido', '1 vez ao dia');
 
 
-
 INSERT INTO EstoqueMedicamento (idPrescricao, quantidadeTotal, quantidadeAtual) 
 VALUES 
 (1, 30, 29),  
