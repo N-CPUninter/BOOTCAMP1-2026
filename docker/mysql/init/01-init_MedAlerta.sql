@@ -36,10 +36,18 @@ CREATE TABLE Prescricao (
     dosagemValor INT NOT NULL,
 	dosagemUnidade VARCHAR(30) NOT NULL,
     frequenciaUso INT,
-	frequenciaTipo ENUM('horas', 'dias', 'semanas' 'dose única'),
+	frequenciaTipo ENUM('horas', 'dias', 'semanas', 'dose única'),
     PRIMARY KEY (idPrescricao),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (idMedicamento) REFERENCES Medicamento(idMedicamento)
+);
+
+create table HorarioMedicamento (
+    idHorarioMedicamento int auto_increment not null,
+    idPrescricao int not null,
+    horario time not null,
+    primary key (idHorarioMedicamento),
+    foreign key (idPrescricao) references Prescricao(idPrescricao)
 );
 
 CREATE TABLE Alerta(
