@@ -29,13 +29,14 @@ create table Medicamento (
     primary key (idMedicamento)
 );
 
-create table UsuarioMedicamento (
-    idUsuarioMedicamento int auto_increment not null,
-    idUsuario int not null,
-    idMedicamento int not null,
-    primary key (idUsuarioMedicamento),
-    foreign key (idUsuario) references Usuario (idUsuario),
-    foreign key (idMedicamento) references Medicamento (idMedicamento)
+CREATE TABLE UsuarioMedicamento (
+    idUsuarioMedicamento INT AUTO_INCREMENT NOT NULL,
+    idUsuario INT NOT NULL,
+    idMedicamento INT NOT NULL,
+    PRIMARY KEY (idUsuarioMedicamento),
+    FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario),
+    FOREIGN KEY (idMedicamento) REFERENCES Medicamento (idMedicamento),
+	UNIQUE (idUsuario, idMedicamento)
 );
 
 CREATE TABLE Prescricao (
