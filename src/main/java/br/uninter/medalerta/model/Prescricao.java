@@ -27,6 +27,7 @@ public class Prescricao {
 
     private Integer frequenciaUso;
 
+    @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private FrequenciaTipo frequenciaTipo;
 

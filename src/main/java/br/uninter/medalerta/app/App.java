@@ -258,36 +258,36 @@ public class App implements CommandLineRunner {
 
     private QuantidadeTipo lerQuantidadeTipo(Scanner sc) {
         while (true) {
-            System.out.print("Quantidade [unidade/ml]: ");
-            String valor = sc.nextLine().trim();
+            System.out.print("Quantidade [UNIDADE/ML]: ");
+            String valor = sc.nextLine().trim().toUpperCase();
             try {
                 return QuantidadeTipo.valueOf(valor);
             } catch (Exception e) {
-                System.out.println("Valor inválido. Use: unidade ou ml.");
+                System.out.println("Valor inválido. Use: UNIDADE ou ML.");
             }
         }
     }
 
     private StatusAlerta lerStatusAlerta(Scanner sc) {
         while (true) {
-            System.out.print("Status alerta [emitido/nao_emitido]: ");
-            String valor = sc.nextLine().trim();
+            System.out.print("Status alerta [EMITIDO/PENDENTE/CONFIRMADO]: ");
+            String valor = sc.nextLine().trim().toUpperCase();
             try {
                 return StatusAlerta.valueOf(valor);
             } catch (Exception e) {
-                System.out.println("Valor inválido. Use: emitido ou nao_emitido.");
+                System.out.println("Valor inválido. Use: EMITIDO, PENDENTE ou CONFIRMADO.");
             }
         }
     }
 
     private ConfirmacaoConsumo lerConfirmacaoConsumo(Scanner sc) {
         while (true) {
-            System.out.print("Confirmação consumo [sim/nao]: ");
-            String valor = sc.nextLine().trim();
+            System.out.print("Confirmação consumo [SIM/NAO]: ");
+            String valor = sc.nextLine().trim().toUpperCase();
             try {
                 return ConfirmacaoConsumo.valueOf(valor);
             } catch (Exception e) {
-                System.out.println("Valor inválido. Use: sim ou nao.");
+                System.out.println("Valor inválido. Use: SIM ou NAO.");
             }
         }
     }

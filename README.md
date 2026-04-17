@@ -109,7 +109,7 @@ O projeto utiliza Docker para padronizar o ambiente.
 ## 1. Configurar variáveis de ambiente
 
 ```bash
-cp .env.example .env
+cp .env.exemplo .env
 ```
 ## 2. Subir os containers
 

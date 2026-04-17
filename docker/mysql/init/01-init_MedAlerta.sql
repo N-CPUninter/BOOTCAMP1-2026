@@ -8,7 +8,7 @@ create table Usuario (
 	idUsuario int auto_increment not null,
 	nome varchar(100) not null,
     telefone varchar(20) not null,
-    email varchar(100) not null,
+    email varchar(100) not null unique,
     enderecoRua varchar(100),
     enderecoNumero int,
     enderecoComplemento varchar(50),
@@ -23,7 +23,7 @@ create table Medicamento (
 	idMedicamento int auto_increment not null,
     nomeComercial varchar(100) not null,
     nomeGenerico varchar(100),
-    quantidade enum('unidade', 'ml'),
+    quantidade enum('UNIDADE', 'ML'),
     formaUso varchar(100),
     observacao varchar(200),
     primary key (idMedicamento)
@@ -36,8 +36,8 @@ CREATE TABLE Prescricao (
     dosagemValor INT NOT NULL,
 	dosagemUnidade VARCHAR(30) NOT NULL,
     frequenciaUso INT,
-	frequenciaTipo ENUM('horas',
-	    'dias', 'semanas', 'dose única'),
+	frequenciaTipo ENUM('HORAS',
+	    'DIAS', 'SEMANAS', 'DOSE_UNICA'),
     PRIMARY KEY (idPrescricao),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (idMedicamento) REFERENCES Medicamento(idMedicamento)
@@ -55,7 +55,7 @@ CREATE TABLE Alerta(
 	idAlerta INT auto_increment NOT NULL,
     idHorarioMedicamento INT NOT NULL,
     tempoMinutos INT NOT NULL,
-    statusAlerta ENUM('emitido', 'pendente', 'confirmado'),
+    statusAlerta ENUM('EMITIDO', 'PENDENTE', 'CONFIRMADO'),
     ativo BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (idAlerta),
     FOREIGN KEY (idHorarioMedicamento) REFERENCES HorarioMedicamento(idHorarioMedicamento)
@@ -72,7 +72,7 @@ CREATE TABLE EstoqueMedicamento (
 
 CREATE TABLE Cuidador (
     idCuidador INT NOT NULL AUTO_INCREMENT,
-    idUsuario INT NOT NULL,
+    idUsuario INT NOT NULL UNIQUE,
     nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,

@@ -1,17 +1,15 @@
 package br.uninter.medalerta.model;
 
 import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Table(name = "Usuario")
-public class Usuario {
+@Table(name = "Cuidador")
+public class Cuidador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idUsuario")
-    private Integer idUsuario;
+    @Column(name = "idCuidador")
+    private Integer idCuidador;
 
     @Column(nullable = false, length = 100)
     private String nome;
@@ -22,45 +20,48 @@ public class Usuario {
     @Column(nullable = false, length = 100, unique = true)
     private String email;
 
-    @Column(length = 100)
+    @Column(nullable = false, length = 100)
     private String enderecoRua;
 
+    @Column(nullable = false)
     private Integer enderecoNumero;
 
     @Column(length = 50)
     private String enderecoComplemento;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     private String enderecoBairro;
 
-    @Column(length = 10)
+    @Column(name = "enderecoCep", nullable = false, length = 10)
     private String enderecoCEP;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     private String enderecoCidade;
 
-    @Column(length = 2)
+    @Column(nullable = false, length = 2)
     private String enderecoEstado;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = false)
-    private List<Prescricao> prescricoes = new ArrayList<>();
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "idUsuario", nullable = false, unique = true)
+    private Usuario usuario;
 
-    public Usuario() {
+    public Cuidador(){
+
     }
 
-    public Integer getIdUsuario() {
-        return idUsuario;
+    public Integer getIdCuidador(){
+        return idCuidador;
+    }
+    
+    public void setIdCuidador(Integer idCuidador){
+        this.idCuidador = idCuidador;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getNome() {
+    public String getNome(){
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome){
         this.nome = nome;
     }
 
@@ -136,18 +137,18 @@ public class Usuario {
         this.enderecoEstado = enderecoEstado;
     }
 
-    public List<Prescricao> getPrescricoes() {
-        return prescricoes;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setPrescricoes(List<Prescricao> prescricoes) {
-        this.prescricoes = prescricoes;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "idUsuario=" + idUsuario +
+        return "Cuidador{" +
+                "idCuidador=" + idCuidador +
                 ", nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'' +
@@ -158,6 +159,7 @@ public class Usuario {
                 ", enderecoCEP='" + enderecoCEP + '\'' +
                 ", enderecoCidade='" + enderecoCidade + '\'' +
                 ", enderecoEstado='" + enderecoEstado + '\'' +
+                ", idUsuario=" + (usuario != null ? usuario.getIdUsuario() : null) +
                 '}';
     }
-}
+}   
