@@ -36,8 +36,8 @@ CREATE TABLE Prescricao (
     dosagemValor INT NOT NULL,
 	dosagemUnidade VARCHAR(30) NOT NULL,
     frequenciaUso INT,
-	frequenciaTipo ENUM('horas',
-	    'dias', 'semanas', 'dose única'),
+	frequenciaTipo ENUM('HORAS',
+	    'DIAS', 'SEMANAS', 'DOSE_UNICA'),
     PRIMARY KEY (idPrescricao),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario),
     FOREIGN KEY (idMedicamento) REFERENCES Medicamento(idMedicamento)
